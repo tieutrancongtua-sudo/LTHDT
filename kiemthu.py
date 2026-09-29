@@ -28,7 +28,7 @@ def main():
 
     # 4. Tăng lương một nhân sự khác theo phần trăm
     print("\n4. Tăng lương se2 thêm 10%:")
-    se2.increaseSalaryBy(10, True)
+    se2.increaseSalary(10, True)
     se2.displayInfo()
 
     # 5. Tạo nhóm dự án không có trưởng nhóm
@@ -43,7 +43,7 @@ def main():
 
     # 7. Thêm một kỹ sư bằng addMember(employee, true) để đặt làm trưởng nhóm
     print("\n7. Thêm se2 làm trưởng nhóm:")
-    team1.addMemberAsLeader(se2)
+    team1.addMember(se2, True)
     team1.displayTeam()
 
     # 8. Thử thêm lại một thành viên đã tồn tại

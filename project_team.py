@@ -72,21 +72,23 @@ class ProjectTeam:
         return self._leader
 
     # ---------- Nạp chồng addMember ----------
-    def addMember(self, employee: Employee) -> bool:
-        return self._addMemberInternal(employee, False)
-
-    def addMemberAsLeader(self, employee: Employee) -> bool:
-        return self._addMemberInternal(employee, True)
-
-    def _addMemberInternal(self, employee: Employee, makeLeader: bool) -> bool:
+    def addMember(self, employee: Employee, makeLeader: bool = False) -> bool:
+        """
+        Thêm thành viên vào nhóm.
+        - makeLeader=False (mặc định): thêm thành viên bình thường.
+        - makeLeader=True: thêm thành viên và gán làm trưởng nhóm.
+        """
         # Không thêm trùng nhân sự
         if self.contains(employee.id):
             print(f"Không thể thêm: Nhân sự {employee.id} đã tồn tại trong nhóm.")
             return False
+
         self._addNode(employee)
+
         if makeLeader:
             # Trưởng nhóm cũ vẫn là thành viên nếu đã có trong nhóm
             self._leader = employee
+
         return True
 
     # ---------- Các phương thức khác ----------

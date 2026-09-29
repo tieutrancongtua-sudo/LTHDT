@@ -37,6 +37,7 @@ class SoftwareEngineer(Employee):
     def technicalAllowance(self):
         return self._technicalAllowance
 
+    # ghi đè phương thức calculateMonthlyCost và displayInfo
     def calculateMonthlyCost(self):
         return self._baseSalary + self._technicalAllowance
 

@@ -29,12 +29,11 @@ class Employee:
         return self._baseSalary
 
     # Nạp chồng increaseSalary
-    def increaseSalary(self, amount: float):
-        if amount <= 0:
-            raise ValueError("Giá trị tăng phải dương.")
-        self._baseSalary += amount
-
-    def increaseSalaryBy(self, value: float, byPercentage: bool):
+    def increaseSalary(self, value: float, byPercentage: bool = False):
+        """
+        Nếu byPercentage=False (mặc định): tăng cố định.
+        Nếu byPercentage=True: tăng theo %.
+        """
         if value <= 0:
             raise ValueError("Giá trị tăng phải dương.")
         if byPercentage:
